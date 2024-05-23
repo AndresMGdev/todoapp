@@ -6,7 +6,7 @@
       </div>
       <div class="flex-none">
         <ul class="menu menu-horizontal px-1">
-          <li><a routerLink="/home">{{ 'MENU.TASKS' | translate }}</a></li>
+          <li><a routerLink="/todo">{{ 'MENU.TASKS' | translate }}</a></li>
           <li><a routerLink="/todo-add">{{ 'MENU.ADD_TASK' | translate }}</a></li>
           <li>
             <details>
@@ -14,8 +14,8 @@
                 ⚙️
               </summary>
               <ul class="p-2 bg-base-100 rounded-t-none z-40">
-                <li><button (click)="setLanguage('en')" [class.active]="currentLang === 'en'"><img src="../assets/images/estados-unidos.png" alt="English"></button></li>
-                <li><button (click)="setLanguage('es')" [class.active]="currentLang === 'es'"><img src="../assets/images/mexico.png" alt="Español"></button></li>
+                <li><button (click)="setLanguage('en')" [class.active]="currentLang === 'en'"><img src="assets/estados-unidos.png" alt="English"></button></li>
+                <li><button (click)="setLanguage('es')" [class.active]="currentLang === 'es'"><img src="assets/mexico.png" alt="Español"></button></li>
                 <li><app-theme></app-theme></li>
               </ul>
             </details>

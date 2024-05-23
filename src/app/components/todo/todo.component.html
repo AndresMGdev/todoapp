@@ -1,0 +1,81 @@
+<div class="flex flex-col w-full ">
+  <div class="title flex flex-col text-center w-full">
+    <h1>{{ 'TASKS' | translate }}</h1>
+  </div>
+  <div class="list m-3">
+    <ul
+      class="flex xl:content-start items-start grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xl:gap-5">
+      @defer {
+      @for (todo of todoList(); track todo.id) {
+      @if (todo.editing) {
+      <li class="m-2">
+        <div class="collapse p-4 bg-primary">
+          <p class="mb-2 text-secondary-content flex flex-col text-center w-full">{{ 'EDIT' | translate }}</p>
+          <div class="inputs">
+            <label class="form-control w-full mb-2">
+              <input type="text" [(ngModel)]="todo.title" placeholder="{{ 'TITLE_PLACEHOLDER' | translate }}"
+                class="input input-bordered input-secondary w-full max-w-xs" />
+            </label>
+            <label class="form-control w-full">
+              <textarea [(ngModel)]="todo.text" class="textarea textarea-accent textarea-lg w-full"
+                placeholder="{{ 'TEXT_PLACEHOLDER' | translate }}"></textarea>
+            </label>
+          </div>
+          <div class="flex mt-3">
+            <button class="btn btn-sm mr-2 btn-success" (click)="updateTodo(todo)">{{ 'UPDATE' | translate }}</button>
+            <button class="btn btn-sm btn-warning" (click)="cancelEdit(todo)">{{ 'CANCEL' | translate }}</button>
+          </div>
+        </div>
+      </li>
+      } @else {
+      <li class="m-2">
+        <div class="collapse">
+          <input type="checkbox" placeholder="1" class="peer" />
+          <div
+            class="collapse-title bg-accent text-primary-content peer-checked:bg-primary peer-checked:text-secondary-content">
+            {{todo.title}}
+          </div>
+          <div
+            class="collapse-content text-primary-content peer-checked:bg-primary peer-checked:text-secondary-content">
+            <p>{{todo.text}}</p>
+            <div class="form-control">
+              <label class="cursor-pointer label">
+                <span class="label-text text-primary-content">{{ 'TASK_COMPLETED' | translate }}</span>
+                <input type="checkbox" checked="checked" class="checkbox checkbox-success" [checked]="todo.completed"
+                  (change)="toggleTodo(todo.id, $event)" />
+              </label>
+            </div>
+            <div class="flex mt-3">
+              @if (!todo.completed) {
+              <button class="btn btn-sm mr-2 btn-info" (click)="editTodo(todo)">{{ 'EDIT' | translate }}</button>
+              }
+              <label for="my_modal_6" class="btn btn-sm btn-error">{{ 'DELETE' | translate }}</label>
+              <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+              <div class="modal" role="dialog">
+                <div class="modal-box bg-warning">
+                  <h3 class="font-bold text-lg text-seccess">Hello dear!</h3>
+                  <p class="py-4 text-error">Are you sure you want to delete the task?</p>
+                  <div class="modal-action">
+                    <button class="btn btn-sm btn-error" (click)="deleteTodo(todo.id)">{{ 'DELETE' | translate
+                      }}</button>
+                    <label for="my_modal_6" class="btn btn-sm btn-info">Close!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      }
+      }
+      } @placeholder (minimum 1000ms) {
+      <div class="skeleton m-2 h-16"></div>
+      <div class="skeleton m-2 h-16"></div>
+      <div class="skeleton m-2 h-16"></div>
+      <div class="skeleton m-2 h-16"></div>
+      <div class="skeleton m-2 h-16"></div>
+      <div class="skeleton m-2 h-16"></div>
+      }
+    </ul>
+  </div>
+</div>

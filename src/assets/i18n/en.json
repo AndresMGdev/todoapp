@@ -1,0 +1,19 @@
+{
+  "APP_TITLE": "TodoApp",
+  "TASKS": "Tasks",
+  "ADD_TASK": "Add Task",
+  "TITLE_PLACEHOLDER": "Here you will write a title",
+  "TEXT_PLACEHOLDER": "Here you will write a text",
+  "TEXT_LABEL": "Text",
+  "TITLE_LABEL": "Title",
+  "UPDATE": "Update",
+  "CANCEL": "Cancel",
+  "DELETE": "Delete",
+  "EDIT": "Edit",
+  "TASK_COMPLETED": "Task completed",
+  "MENU": {
+    "TASKS": "Tasks",
+    "ADD_TASK": "Add Task",
+    "TOOLS": "Tools"
+  }
+}

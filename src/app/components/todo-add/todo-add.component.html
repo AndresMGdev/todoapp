@@ -1,0 +1,26 @@
+<div class="content">
+  <div class="card w-96 bg-base-100 shadow-xl m-auto">
+    <div class="card-body items-center text-center">
+      <div class="card-title">{{ 'ADD_TASK' | translate }}</div>
+      <form [formGroup]="addTask" (ngSubmit)="submitTask()">
+        <label class="form-control w-full">
+          <div class="label">
+            <span class="label-text">{{ 'TITLE_LABEL' | translate }}</span>
+          </div>
+          <input type="text" placeholder="{{ 'TITLE_PLACEHOLDER' | translate }}"
+            class="input input-bordered input-secondary w-full max-w-xs" id="title" formControlName="title" />
+        </label>
+        <label class="form-control w-full mb-2">
+          <div class="label">
+            <span class="label-text">{{ 'TEXT_LABEL' | translate }}</span>
+          </div>
+          <textarea class="textarea textarea-accent textarea-lg w-full"
+            placeholder="{{ 'TEXT_PLACEHOLDER' | translate }}" id="text" formControlName="text"></textarea>
+        </label>
+        <div class="card-actions">
+          <button type="submit" class="btn btn-primary">{{ 'ADD_TASK' | translate }}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -12,6 +12,9 @@
   "EDIT": "Edit",
   "TASK_COMPLETED": "Task completed",
   "MENU": {
+    "LOGOUT": "Logout",
+    "HOME": "Home",
+    "SIGNIN": "Signin",
     "TASKS": "Tasks",
     "ADD_TASK": "Add Task",
     "TOOLS": "Tools"

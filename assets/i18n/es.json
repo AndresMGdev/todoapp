@@ -12,6 +12,9 @@
   "EDIT": "Editar",
   "TASK_COMPLETED": "Tarea completada",
   "MENU": {
+    "LOGOUT": "Salir",
+    "HOME": "Inicio",
+    "SIGNIN": "Iniciar Sesión",
     "TASKS": "Tareas",
     "ADD_TASK": "Agregar Tarea",
     "TOOLS": "Herramientas"
